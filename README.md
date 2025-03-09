@@ -45,6 +45,8 @@ CREATE TABLE leaderboard (
 
 2. Run following commands in CMD
 
+Change db password to your own in backend server.js
+
 cd backend
 
 npm init -y
