@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="header">Admin Panel</h2>
+
+        <!-- Players View Section -->
+        <div id="players-view" class="section">
+            <h3 class="section-title">Players View</h3>
+            <table id="players-table" class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>University</th>
+                        <th>Category</th>
+                        <th>Total Runs</th>
+                        <th>Balls Faced</th>
+                        <th>Innings Played</th>
+                        <th>Wickets</th>
+                        <th>Overs Bowled</th>
+                        <th>Runs Conceded</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-players-list"></tbody>
+            </table>
+        </div>
+
+        <!-- Edit Player Form -->
+        <div id="edit-player-form" class="section" style="display: none;">
+            <h3>Edit Player</h3>
+            <input type="text" id="edit-name" placeholder="Name" class="input-field">
+            <input type="text" id="edit-university" placeholder="University" class="input-field">
+            <select id="edit-category" class="input-field">
+                <option value="Batsman">Batsman</option>
+                <option value="Bowler">Bowler</option>
+                <option value="All-Rounder">All-Rounder</option>
+            </select>
+            <input type="text" id="edit-total-runs" placeholder="Total Runs" class="input-field">
+            <input type="text" id="edit-balls-faced" placeholder="Balls Faced" class="input-field">
+            <input type="text" id="edit-innings-played" placeholder="Innings Played" class="input-field">
+            <input type="text" id="edit-wickets" placeholder="Wickets" class="input-field">
+            <input type="text" id="edit-overs-bowled" placeholder="Overs Bowled" class="input-field">
+            <input type="text" id="edit-runs-conceded" placeholder="Runs Conceded" class="input-field">
+            <button onclick="savePlayerChanges()" class="btn">Save Changes</button>
+            <button onclick="cancelEdit()" class="btn">Cancel</button>
+        </div>
+
+
+        <!-- Add New Player Section -->
+        <div class="section">
+            <h3 class="section-title">Add New Player</h3>
+            <div class="form-container">
+                <input type="text" id="new-name" placeholder="Name" class="input-field">
+                <input type="text" id="new-university" placeholder="University" class="input-field">
+                <select id="new-category" class="input-field">
+                    <option value="Batsman">Batsman</option>
+                    <option value="Bowler">Bowler</option>
+                    <option value="All-Rounder">All-Rounder</option>
+                </select>
+                <input type="text" id="total-runs" placeholder="Total Runs" class="input-field">
+                <input type="text" id="balls-faced" placeholder="Balls Faced" class="input-field">
+                <input type="text" id="innings-played" placeholder="Innings Played" class="input-field">
+                <input type="text" id="wickets" placeholder="Wickets" class="input-field">
+                <input type="text" id="overs-bowled" placeholder="Overs Bowled" class="input-field">
+                <input type="text" id="runs-conceded" placeholder="Runs Conceded" class="input-field">
+
+                <button onclick="addPlayer()" class="btn">Add Player</button>
+            </div>
+        </div>
+
+        <!-- View Player Stats Button -->
+        <div class="section">
+            <button class="btn" onclick="openPlayerStatsModal()">View Player Stats</button>
+        </div>
+
+        <!-- New Player Added Section -->
+        <div class="section">
+            <h3 class="section-title">New Player Added</h3>
+            <table id="new-player-table" class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>University</th>
+                        <th>Category</th>
+                        <th>Total Runs</th>
+                        <th>Balls Faced</th>
+                        <th>Innings Played</th>
+                        <th>Wickets</th>
+                        <th>Overs Bowled</th>
+                        <th>Runs Conceded</th>
+                    </tr>
+                </thead>
+                <tbody id="new-player-details"></tbody>
+            </table>
+        </div>
+
+        <!-- Auth Pages Section -->
+        <div id="auth-pages" class="section">
+            <button onclick="logout()" class="btn">Logout</button>
+        </div>
+    </div>
+
+    <!-- Modal for Player Stats -->
+    <div id="player-stats-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePlayerStatsModal()">&times;</span>
+            <h3>Player Stats</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Player Name</th>
+                        <th>Player Points</th>
+                        <th>Batting Strike Rate</th>
+                        <th>Batting Average</th>
+                        <th>Bowling Strike Rate</th>
+                        <th>Economy Rate</th>
+                        <th>Value (Rs)</th>
+                    </tr>
+                </thead>
+                <tbody id="player-stats-table"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

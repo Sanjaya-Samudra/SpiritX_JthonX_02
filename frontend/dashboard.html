@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <h2>Welcome, <span id="username"></span></h2>
+    <h3>Budget: Rs. <span id="budget">9000000</span></h3>
+
+    <section>
+        <h3>Available Players</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>University</th>
+                    <th>Category</th>
+                    <th>Total Runs</th>
+                    <th>Balls Faced</th>
+                    <th>Innings Played</th>
+                    <th>Wickets</th>
+                    <th>Overs Bowled</th>
+                    <th>Runs Conceded</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="players-list">
+                <!-- Available players will be dynamically populated here -->
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>My Team (Max 11 Players)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>University</th>
+                    <th>Category</th>
+                    <th>Total Runs</th>
+                    <th>Balls Faced</th>
+                    <th>Innings Played</th>
+                    <th>Wickets</th>
+                    <th>Overs Bowled</th>
+                    <th>Runs Conceded</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="team-list">
+                <!-- Selected players will be dynamically populated here -->
+            </tbody>
+        </table>
+    </section>
+
+    <div>
+        <button onclick="window.location.href='leaderboard.html'">Leaderboard</button>
+        <button onclick="window.location.href='chatbot.html'">Chatbot</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
