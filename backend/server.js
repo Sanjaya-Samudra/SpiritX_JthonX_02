@@ -229,7 +229,7 @@ function preloadPlayers() {
         ["Avishka Mendis", "Eastern University", "All-Rounder", 210, 175, 7, 7, 35, 210],
         ["Danushka Kumara", "University of the Visual & Performing Arts", "Batsman", 780, 866, 15, 0, 5, 35],
         ["Praveen Vandersay", "Eastern University", "Batsman", 329, 365, 7, 0, 3, 24]
-        // Add the remaining players from the dataset...
+        // Add players from the dataset...
     ];
 
     const sql = `INSERT IGNORE INTO players (name, university, category, total_runs, balls_faced, innings_played, wickets, overs_bowled, runs_conceded) VALUES ?`;
@@ -240,6 +240,6 @@ function preloadPlayers() {
     });
 }
 
-// Call this function when the server starts
+// Call function when the server starts
 preloadPlayers();
 

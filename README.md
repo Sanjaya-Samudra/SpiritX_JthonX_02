@@ -1,3 +1,5 @@
+1. Create following databases
+
 CREATE DATABASE spirit11;
 USE spirit11;
 
@@ -41,6 +43,12 @@ CREATE TABLE leaderboard (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+2. Run following commands in CMD
+
+cd backend
 
 npm init -y
+
 npm install express mysql bcryptjs jsonwebtoken cors dotenv body-parser
+
+node server.js
